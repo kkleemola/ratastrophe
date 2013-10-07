@@ -1,0 +1,1005 @@
+<!-- NOTE: Sorry guise. We're reverse engineers. Not web devs. This is kind of a wreck. -->
+
+<!doctype html>
+<html>
+	<head>
+		<title>RATastrophe: Monitoring a Malware Menagerie</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">	
+		<link href="style.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div id="impress">
+			<body class="impress-not-supported">
+			<div class="fallback-message">
+			    <p>Wait, people still use browsers not supported by impress.js!?</p>
+			</div>
+			
+			<!-- Title & Subtitle - should we throw our names in here somewhere? -->
+			<div id="title" class="step" data-x="0" data-y="0" data-scale="5">
+			     <h1>RATastrophe</h1>
+			</div>
+			<div id="subtitle" class="step" data-x="0" data-y="1000" data-scale="5">
+				<h2>Monitoring a Malware Menagerie</h2>
+			</div>
+			
+			<!-- Who are we? -->
+			<div id ="whoareu" class="step" data-x="0" data-y="4000">
+				<img src="resources/img/whoru.jpg"></img>
+				<div class="section-title">
+				<h2>Who are we?</h2>
+				</div>
+			</div>
+			<div class="step" data-x="0" data-y="5500" data-rotate="90">
+				Seth Hardy
+			</div>
+			<div class="step" data-x="100" data-y="5600" data-rotate="90">
+				Katie Kleemola
+			</div>
+			<div class="step" data-x="200" data-y="5700" data-rotate="90">
+				Greg Wiseman
+			</div>
+			<div class="step" data-x="-350" data-y="5800" data-rotate="90" data-scale="1">
+				<img src="resources/img/citlab.jpg"></img>
+			</div>
+			<div class="step" data-x="-100" data-y="6500">
+				Munk School of Global Affairs
+			</div>
+			<div class="step" data-x="-100" data-y="6600">
+				University of Toronto
+			</div>
+			
+			<!-- Background section -->
+			<div id ="background" class="step" data-x="5000" data-y="4000" data-scale="2">
+				<div class="section-title">
+				<h2>Background</h2>
+				</div>
+			</div>
+			<div class="step" data-x="3800" data-y="3800">
+				<div class="lefttext">
+						<b>Comparison</b> of Targeted Threats against Human Rights Organizations Research Project
+				</div>
+			</div>
+			<div class="step" data-x="3800" data-y="4300">
+				<div class="lefttext">
+					<b>Limited visibility:</b> only participating organizations, only what they send
+				</div>
+			</div>
+			<div class="step" data-x="5000" data-y="3800">
+				<div class="righttext">
+					Looking primarily at <i>highly</i> targeted attacks and <i>already</i> compromised targets
+				</div>
+			</div>
+			<div class="step" data-x="5000" data-y="4300">
+				<div class="righttext">
+					<i>Not</i> writing AV detection - although perhaps NIDS signatures
+				</div>
+			</div>
+			
+			<!-- Previous research section -->
+			<div id ="prev-research" class="step" data-x="9600" data-y="4000" data-scale="2">
+				<div class="section-title">
+				<h2>Previous Research</h2>
+				</div>
+			</div>
+			<div class="step" data-x="10000" data-y="3850">
+				From the Targeted Threats project:
+			</div>
+			<div class="step" data-x="10500" data-y="3950">
+				<div class="subpoint">
+				IExplore/Sharky RAT (2011)
+				</div>
+			</div>
+			<div class="step" data-x="10500" data-y="4050">
+				<div class="subpoint">
+				Mac Malware (2012)
+				</div>
+			</div>
+			<div class="step" data-x="10000" data-y="4200">
+				Primarily focused on Tibetan civil society organizations
+			</div>
+			<div class="step" data-x="10000" data-y="4400">
+				Multiple names on Mila’s APT spreadsheet
+			</div>
+			
+			<!-- what is apt? will fix so the red goes over it-->
+			<div id="aptwhat" class="step" data-x="15000" data-y="4000" data-scale="4">
+					<div class="section-title">
+					<h2>What is an APT?</h2>
+					</div>
+			</div>
+			<div class="step hide" data-x="14850" data-y="4000" data-scale="2">
+				<div class="surprise">
+				<img src="resources/img/SlashCircle.svg"></img>
+				</div>
+			</div>
+			<div class="step hide" data-x="15250" data-y="4500">
+				You already know.
+			</div>
+			<div class="step hide" data-x="15250" data-y="4500">
+				<div class="surprise">
+				You’re probably still getting owned...
+				</div>
+			</div>
+			<div class="step hide" data-x="15250" data-y="4500">
+				<div class="surprise">
+				Are you really interested in <b>what</b>, as opposed to <b>who</b> and <b>why</b>?
+				</div>
+			</div>
+			
+			<!-- THREAT ATTRIBUTION -->
+			<div id="threatattr" class="step" data-x="20000" data-y="4000" data-scale="1">
+					<div class="section-title">
+					<h2>THREAT ATTRIBUTION</h2>
+					</div>
+			</div>
+			<div class="step" data-x="20000" data-y="5000" data-scale="1">
+				<img src="resources/img/AnchorPanda_0.png"></img>
+			</div>
+			<div class="step hide" data-x="20500" data-y="5000" data-scale="3">
+				<div class="surprise">
+				Kind of a <div class="big">big</div> deal?
+				</div>
+			</div>
+			
+			<!-- SUN TZU INTERLUDE -->
+			<div id="suntzu" class="step" data-x="25000" data-y="4000" data-scale="3">
+					<div class="section-title">
+					<h2>Obligatory Sun Tzu Quote</h2>
+					</div>
+			</div>
+			<div class="step" data-x="25000" data-y="6000" data-scale="1">
+				<div class="quote">
+				<i>It is said that if you know your enemies and know yourself, you will not be imperiled in a hundred battles; if you do not know your enemies but do know yourself, you will win one and lose one; if you do not know your enemies nor yourself, you will be imperiled in every single battle.</i>
+				</div>
+			</div>
+			<div class="step" data-x="25000" data-y="7000" data-scale="1">
+				<img src="resources/img/suntzu.png"></img>
+			</div>
+			<div id="threatattr2" class="step" data-x="25000" data-y="8000" data-scale="1">
+					<div class="section-title">
+					<h2>THREAT</h2>
+					<img src="resources/img/busted.jpg"></img>
+					<h2>ATTRIBUTION</h2>
+					</div>
+			</div>
+			<div class="step" data-x="25000" data-y="9000">
+				Contextual information often overlooked
+			</div>
+			<div class="step" data-x="23500" data-y="9000">
+				How do we do this?
+			</div>
+			<div class="step" data-x="24000" data-y="9200">
+				Look for the smoking gun
+			</div>
+			<div class="step" data-x="24500" data-y="9400">
+				Cluster and make connections
+			</div>
+			<div class="step" data-x="25000" data-y="9600">
+				<b>Technical:</b> vulnerabilities, malware families, infrastructure
+			</div>
+			<div class="step" data-x="25000" data-y="9800">
+				<b>Contextual:</b> people (targeted and spoofed), organizations
+			</div>
+			
+			<!-- REGIONAL OVERVIEW -->
+			<div id="regoverview" class="step" data-x="30000" data-y="9800" data-scale="1">
+					<div class="section-title">
+					<h2>REGIONAL OVERVIEW</h2>
+					</div>
+			</div>
+			<div id="war" class="step hide" data-x="30000" data-y="9800" data-scale="1">
+					<img src="resources/img/cyberwar.png"></img>
+			</div>
+			<div id="middleeast" class="step big" data-x="29500" data-y="8900" data-scale="1">
+					<div class="subsection-title">
+					<h2>Middle East</h2>
+					</div>
+			</div>
+			<div id="syria" class="step kindabig" data-x="30000" data-y="8650" data-scale="1">
+					<div class="subsection-title">
+					<h2>Syria</h2>
+					</div>
+			</div>
+			<div class="step" data-x="30600" data-y="8800" data-scale="1">
+				Fake Skype tools
+			</div>
+			<div class="step" data-x="30600" data-y="8900" data-scale="1">
+				Fake hacking tools
+			</div>
+			<div class="step" data-x="30600" data-y="9000" data-scale="1">
+				Public RATS
+			</div>
+			<div class="step" data-x="30700" data-y="9100" data-scale="1">
+				DarkComet
+			</div>
+			<div class="step" data-x="30700" data-y="9200" data-scale="1">
+				XTreme RAT
+			</div>
+			<div class="step hide" data-x="30600" data-y="9400" data-scale="1">
+				<div class="surprise">
+				<i>See EFF work by Eva Galperin & Morgan Marquis-Boire</i>
+				</div>
+			</div>
+			<div id="iran" class="step kindabig" data-x="29050" data-y="4000" data-scale="1">
+					<div class="subsection-title">
+					<h2>Iran</h2>
+					</div>
+			</div>
+			<div class="step" data-x="29600" data-y="4100" data-scale="1">
+				Fake censorship circumvention tools
+			</div>
+			<div class="step" data-x="29750" data-y="4250" data-scale="1">
+				njRAT posing as Psiphon, distributed by Farsi file-sharing sites
+			</div>
+			<div class="step" data-x="27500" data-y="4000" data-scale="1">
+				<img src="resources/img/pisphone.png"></img>
+			</div>
+			<div class="step" data-x="29600" data-y="4500" data-scale="1">
+				Lower technical sophistication
+			</div>
+			<div class="step" data-x="29600" data-y="4650" data-scale="1">
+				Higher degree of “compromise and own” and social engineering
+			</div>
+			<div id="tibet" class="step" data-x="30000" data-y="6800" data-scale="1">
+					<div class="subsection-title big">
+					<h2>Tibet/China</h2>
+					</div>
+			</div>
+			<div class="step" data-x="30100" data-y="7000" data-scale="1">
+				Mostly document malware
+			</div>
+			<div class="step" data-x="30100" data-y="7300" data-scale="1" data-rotate="20">
+				Same CVE's are used
+			</div>
+			<div class="step hide" data-x="29900" data-y="7650" data-scale="1" data-rotate="55">
+				over
+			</div>
+			<div class="step hide" data-x="29900" data-y="7650" data-scale="1" data-rotate="55">
+				and over
+			</div>
+			<div class="step hide" data-x="29900" data-y="7650" data-scale="1" data-rotate="55">
+				and over again
+			</div>
+			<div class="step hide" data-x="29900" data-y="7650" data-scale="1" data-rotate="55">
+				- long after they've been fixed
+			</div>
+			<div id="minimizingav" class="step" data-x="35000" data-y="6000" data-scale="1">
+					<div class="subsection-title">
+					<h2>Minimizing AV Detection</h2>
+					</div>
+			</div>
+			<div class="step" data-x="35400" data-y="6200" data-scale="2">
+				<div class="big">
+				Protip
+				</div>
+			</div>
+			<div class="step" data-x="36500" data-y="4500" data-scale="1">
+				Modify the RTF header
+				<img src="resources/img/rtfhex.png"></img><p>
+				Word will still open them but <p>less AV engines will detect them
+			</div>
+			<div id="disguise20120158" class="step" data-x="40000" data-y="6000" data-scale="1">
+					<div class="subsection-title">
+					<h2>Disguising CVE-2012-0158</h2>
+					</div>
+			</div>
+			<div class="step" data-x="40000" data-y="5000" data-scale="1">
+				<div class="alert">
+				Recall
+				</div>
+			</div>
+			<div class="step" data-x="40400" data-y="4800" data-scale="1">
+				CVE-2012-0158 is the still the most commonly used vulnerability used against Tibetan groups despite being fixed in April 2012
+			</div>
+			<div class="step" data-x="40400" data-y="5100" data-scale="1">
+				CVE-2012-0158 typically uses the ListView, ListView2, TreeView or TreeView2 ActiveX controllers
+			</div>
+			<div class="step" data-x="40400" data-y="5350" data-scale="1">
+				How to mask the use of vulnerable ActiveX controllers?
+			</div>
+			<div class="step" data-x="42695" data-y="5750" data-scale="1">
+				<div class="subheading">
+				Trick 1: 
+				</div>
+			</div>
+			<div class="step" data-x="42695" data-y="6100" data-scale="1">
+				<img src="resources/img/hexencoded.png"></img>
+			</div>
+			<div class="step" data-x="42695" data-y="6450" data-scale="1">
+				Encode the ActiveX controller name
+			</div>
+			<div class="step" data-x="45000" data-y="6000" data-scale="2">
+				<img src="resources/img/wizard.png"></img>
+			</div>
+			<div class="step" data-x="45300" data-y="6000" data-scale="1">
+				<img src="resources/img/decode.png"></img>
+			</div>
+			
+			<div class="step" data-x="45900" data-y="8000" data-scale="1">
+				<div class="subheading">
+				Trick 2: 
+				</div>
+				<img src="resources/img/chartspace.png"></img>
+				Find a less commonly known feature to exploit the same vulnerability
+			</div>
+			<div class="step" data-x="44000" data-y="8000" data-scale="1">
+				<div class="subheading">
+				Trick 3: 
+				</div>
+				<img src="resources/img/mime.png"></img>
+				Disguise the document
+			</div>
+			<div class="step" data-x="45000" data-y="7100" data-scale="4">
+				Antivirus definitions are often updated to recognize these tricks
+			</div>
+			<div class="step hide" data-x="45000" data-y="7550" data-scale="2">
+				But there is often a lag resulting in individuals being compromised
+			</div>
+			
+			<!-- Clustering! -->
+			<div id="clust" class="step" data-x="50000" data-y="4000" data-scale="3">
+					<div class="section-title">
+					<h2>Clustering</h2>
+					</div>
+			</div>
+			<div class="step" data-x="49500" data-y="4500" data-scale="1">
+				<div class="alert">
+				Definition
+				</div>
+			</div>
+			<div class="step" data-x="49580" data-y="4600" data-scale="1">
+				<div class="subheading">
+				RAT King:
+				</div>
+				A series of C2's intertwined by RATs
+			</div>
+			<div class="step" data-x="45000" data-y="4300" data-scale="1" data-rotate="90">
+				<div class="alert">
+				Example
+				</div>
+			</div>
+			<div id="dtl" class="step" data-x="45000" data-y="4600" data-rotate="90">
+					<div class="subsection-title">
+					<h2>"DTL Guys"</h2>
+					</div>
+					An ongoing campaign since January 2012
+			</div>
+			<div class="step" data-x="46300" data-y="5000" data-scale="1">
+				<div class="alert">
+				Observe
+				</div>
+			</div>
+			<div class="step" data-x="47000" data-y="5100" data-scale="2">
+				<img src="resources/img/labelledratking.png"></img>
+			</div>
+			<div class="step" data-x="48000" data-y="5000" data-scale="1">
+				Four domains resolve to same IP
+			</div>
+			<div class="step" data-x="48000" data-y="5150" data-scale="1">
+				C2's for six different malware families
+			</div>
+			<div class="step" data-x="48000" data-y="5300" data-scale="1">
+				But mostly LURK0/CCTVO and Surtr
+			</div>
+			<div id="lurk0" class="step" data-x="50000" data-y="6000">
+					<div class="evilmalwarefamily">
+					<h2>LURK0 & CCTV0</h2>
+					</div>
+			</div>
+			<div class="step" data-x="50000" data-y="7000" data-scale="1">
+				<div class="centertext">
+				Gh0stRAT based
+				<img src="resources/img/rat.jpg"></img>
+				</div>
+			</div>
+			<div class="step" data-x="49600" data-y="8000" data-scale="1">
+				Named for five character header in communications
+			</div>
+			<div class="step" data-x="50000" data-y="8200" data-scale="1">
+				Standard RAT functionality
+			</div>
+			<div class="step" data-x="49600" data-y="8400" data-scale="1">
+				Active development over the past two years
+			</div>
+			<div class="step" data-x="50000" data-y="9000" data-scale="1">
+				At first...
+			</div>
+			<div class="step" data-x="50000" data-y="8900" data-scale="1">
+				<div class="centertext">
+				Internal name: "Butterfly.dll"
+				<img src="resources/img/butterfly.jpg">
+				</div>
+			</div>
+			<div class="step" data-x="50000" data-y="10100" data-scale="1">
+				Then a break...
+			</div>
+			<div class="step" data-x="50200" data-y="10000" data-scale="1">
+				<div class="centertext">
+				Internal name: "ETClient.dll"
+				<img src="resources/img/etclient.jpg"></img>
+				</div>
+			</div>
+			<div class="step" data-x="51600" data-y="10000" data-scale="1">
+				Features added:
+			</div>
+			<div class="step" data-x="51650" data-y="10100" data-scale="1">
+				Padding with extra data
+			</div>
+			<div class="step" data-x="51700" data-y="10200" data-scale="1">
+				Larger file size to avoid AV heuristics
+			</div>
+			<div class="step" data-x="51700" data-y="10300" data-scale="1">
+				Different hash everytime
+			</div>
+			<div class="step" data-x="51650" data-y="10450" data-scale="1">
+				Upgrade zlib version used for encrypting communication
+			</div>
+			<div class="step" data-x="51650" data-y="10600" data-scale="1">
+				Change persistence mechanism
+			</div>
+			<div class="step" data-x="51650" data-y="10700" data-scale="1">
+				Add configuration file
+			</div>
+			<div class="step" data-x="51650" data-y="10825" data-scale="1">
+				Change the five character header from 'LURK0' to 'CCTV0'
+			</div>
+			<div class="step" data-x="51650" data-y="11700" data-scale="1">
+				Samples of the same family but not using this C2 cluster often haven't followed the same development branch
+			</div>
+			<div class="step" data-x="51650" data-y="11950" data-scale="1">
+				and have differences in internal identifiers and functionality
+			</div>
+			<div class="step" data-x="51650" data-y="12150" data-scale="1">
+				but trying to track this is time consuming and tedious
+			</div>
+			<div class="step" data-x="50000" data-y="12100" data-scale="1">
+				<b>Aside:</b> Researchers give malware much cooler names than their authors do
+			</div>
+			
+			<div id="surtr" class="step" data-x="50000" data-y="13100" data-scale="2">
+					<div class="evilmalwarefamily">
+					<h2>Surtr</h2>
+					</div>
+			</div>
+			<div class="step" data-x="50000" data-y="13100" data-scale="1">
+				<img src="resources/img/surtr.jpg"></img>
+			</div>
+			<div class="step" data-x="50000" data-y="14100" data-scale="1">
+				Unsurprising... standard RAT functionality
+			</div>
+			<div class="step" data-x="50000" data-y="14300" data-scale="1">
+				Immediately downloads a stage 2 component allowing for easy updating
+			</div>
+			<div class="step" data-x="50000" data-y="14500" data-scale="1">
+				Similar campaign codes and config files as LURK0/CCTV0
+			</div>
+			<div class="step" data-x="50000" data-y="14650" data-scale="1">
+				Uses zlib to encrypt network traffic
+			</div>
+			<div class="step" data-x="50000" data-y="14800" data-scale="1">
+				Pads resource section to make file larger
+			</div>
+			<div class="step" data-x="50000" data-y="14950" data-scale="1">
+				Spiritual successor to LURK0/CCTV0
+			</div>
+			<div class="step" data-x="50000" data-y="15700" data-scale="1">
+				<img src="resources/img/dtltimeline.png"></img>
+			</div>
+			<div class="step" data-x="45000" data-y="15700" data-scale="2">
+				Clustering based fairly obvious on basis of shared infrastructure
+			</div>
+			<div class="step" data-x="45000" data-y="15875" data-scale="1">
+				But looking at the development path
+			</div>
+			<div class="step" data-x="45000" data-y="15950" data-scale="1">
+				of the malware families used we can
+			</div>
+			<div class="step" data-x="45000" data-y="16075" data-scale="1">
+				<i>try</i> to guess non-obviously related campaigns...
+			</div>
+			
+			<!-- tseringKanyaq -->
+			<div id="tseringkanyaq" class="step" data-x="50000" data-y="25000" data-rotate="90" data-scale="5">
+					<div class="subsection-title">
+					<h2>TseringKanyaq</h2>
+					</div>
+			</div>
+			<div class="step" data-x="50000" data-y="25000" data-scale="1">
+				Very easy cluster to spot via contextual analysis
+			</div>
+			<div class="step" data-x="50000" data-y="25200" data-scale="1">
+				<div class="subpoint">
+					Reply-To: {tseringKanyaq,d.kanam}@yahoo.com
+				</div>
+			</div>
+			<div class="step" data-x="50000" data-y="25400" data-scale="1">
+				<div class="subpoint">
+					Often spoofs Tibetan Women’s Association or other real organizations
+				</div>
+			</div>
+			<div class="step" data-x="49600" data-y="24000" data-scale="1" data-rotate="90">
+				First seen May 4, 2012
+			</div>
+			<div class="step" data-x="49450" data-y="24000" data-scale="1" data-rotate="90">
+				Last seen July 4, 2013
+			</div>
+			<div class="step hide" data-x="49300" data-y="24000" data-scale="1" data-rotate="90">
+				<div class="secret">
+					(but we’ll likely see more)
+				</div>
+			</div>
+			<div class="step" data-x="52000" data-y="25400" data-scale="1">
+				<div class="alert">
+					<div class="centertext">
+					THREE WOLF REPLY-TO:
+					<img src="resources/img/3wolfmoon.jpg"></src>
+					</div>
+				</div>
+			</div>
+			<div id="infrastructureclustering" class="step" data-x="55000" data-y="25400" data-scale="2">
+					<div class="subsection-title">
+					<h2>Infrastructure Clustering</h2>
+					</div>
+			</div>
+			<div class="step" data-x="55000" data-y="25500" data-scale="1">
+				Uses three domains for sending email
+			</div>
+			<div class="step" data-x="55500" data-y="25600" data-scale="1">
+				<div class="subpoint">
+					163.com
+				</div>
+			</div>
+			<div class="step" data-x="55500" data-y="25700" data-scale="1">
+				<div class="subpoint">
+					myopera.com
+				</div>
+			</div>
+			<div class="step" data-x="55500" data-y="25800" data-scale="1">
+				<div class="subpoint">
+					gmx.com
+				</div>
+			</div>
+			<div class="step" data-x="55000" data-y="25950" data-scale="1">
+				No overlap - moves from one to the next
+			</div>
+			<div class="step" data-x="56000" data-y="25600" data-scale="1">
+				<div class="subpoint">
+					 : May 4, 2012 - July 9, 2012
+				</div>
+			</div>
+			<div class="step" data-x="56000" data-y="25700" data-scale="1">
+				<div class="subpoint">
+					 : July 24, 2012 - September 5, 2012
+				</div>
+			</div>
+			<div class="step" data-x="56000" data-y="25800" data-scale="1">
+				<div class="subpoint">
+					 : October 14, 2012 - present
+				</div>
+			</div>
+			<div id="vulns" class="step" data-x="58000" data-y="0" data-scale="2">
+					<div class="subsection-title">
+					<h2>Vulnerabilities</h2>
+					</div>
+			</div>
+			<div class="step" data-x="58200" data-y="-200" data-scale="1">
+				CVE-2012-0158
+			</div>
+			<div class="step" data-x="58400" data-y="0" data-scale="1">
+				<div class="subpoint">
+					The best thing since CVE-2010-3333!
+				</div>
+			</div>
+			<div class="step" data-x="58400" data-y="200" data-scale="1">
+				And Mac users?
+			</div>
+			<div class="step" data-x="58500" data-y="350" data-scale="1">
+				<div class="subpoint">
+					CVE-2009-0563, CVE-2012-0507
+				</div>
+			</div>
+			<div class="step" data-x="58500" data-y="1000" data-scale="1">
+				None of these stand out for Tibetan attacks
+			</div>
+			<div id="malfam" class="step" data-x="58500" data-y="2000" data-scale="2">
+					<div class="subsection-title">
+					<h2>Malware Families</h2>
+					</div>
+			</div>
+			<div class="step" data-x="59000" data-y="1900" data-scale="1">
+				Windows:
+			</div>
+			<div class="step" data-x="59050" data-y="2000" data-scale="1">
+				Shadownet & Duojeen
+			</div>
+			<div class="step" data-x="58550" data-y="2150" data-scale="1">
+				Remember Lucky Cat?
+			</div>
+			<div class="step hide" data-x="59050" data-y="2150" data-scale="1">
+				<div class="surprise">
+				<img src="resources/img/lucky_cat.gif"></img>
+				</div>
+			</div>
+			<div class="step hide" data-x="58550" data-y="2300" data-scale="1">
+				See the Trend Micro reports.
+			</div>
+			<div class="step" data-x="58050" data-y="2150" data-scale="1">
+				Mac:
+			</div>
+			<div class="step" data-x="58150" data-y="2250" data-scale="1">
+				PubSab
+			</div>
+			<div class="step hide" data-x="58150" data-y="2400" data-scale="1">
+				See last year's talk.
+			</div>
+			<div id="shadownet" class="step" data-x="58150" data-y="3500" data-scale="2">
+					<div class="evilmalwarefamily">
+					<h2>Shadownet</h2>
+					</div>
+			</div>
+			<div class="step" data-x="58150" data-y="3600" data-scale="1">
+				Persistence via WMI - fairly unusual
+			</div>
+			<div class="step" data-x="58150" data-y="3750" data-scale="1">
+				Very inconsistent technical sophistication
+			</div>
+			<div class="step" data-x="58550" data-y="3825" data-scale="1">
+				<div class="subpoint">
+					Some attacks use UAC elevation
+				</div>
+			</div>
+			<div class="step" data-x="58550" data-y="3950" data-scale="1">
+				<div class="subpoint">
+					Some attacks are just completely broken
+				</div>
+			</div>
+			<div class="step" data-x="58150" data-y="4100" data-scale="1">
+				No clear sign of active development on any malware family
+			</div>
+			<div class="step" data-x="58550" data-y="4250" data-scale="1">
+				<div class="subpoint">
+					Repurposing, as opposed to development?
+				</div>
+			</div>
+			<div id="c2infrastructure2" class="step" data-x="58550" data-y="5500" data-scale="2">
+					<div class="subsection-title">
+					<h2>C2 Infrastructure</h2>
+					</div>
+			</div>
+			<div class="step" data-x="58650" data-y="5200" data-scale="1">
+				Disposable infrastructure:
+			</div>
+			<div class="step" data-x="58800" data-y="5350" data-scale="1">
+				free hosting providers
+			</div>
+			<div class="step" data-x="59000" data-y="5500" data-scale="1">
+				mostly .com and .info, but also .in and .gg
+			</div>
+			<div class="step" data-x="58800" data-y="5650" data-scale="1">
+				some Tibetan-themed names
+			</div>
+			<div id="c2infrastructure" class="step" data-x="58800" data-y="6200">
+					<div class="centertext">
+					<div class="subsection-title">
+					<h2>C2 Infrastructure</h2>
+					</div>
+					<img src="resources/img/appleboy1111.png">
+					</div>
+			</div>
+			<div class="step" data-x="58800" data-y="7000" data-scale="1">
+				Threat clustering and attribution most clear from contextual analysis
+			</div>
+			<div class="step" data-x="59000" data-y="7200" data-scale="1">
+				<div class="subpoint">
+					Vulnerabilities and exploits very similar to many others
+				</div>
+			</div>
+			<div class="step" data-x="58800" data-y="7500" data-scale="1">
+				Knowing how targeted organizations and (real, impersonated) people are related assists with analysis
+			</div>
+			<div class="step" data-x="59000" data-y="7700" data-scale="1">
+				<div class="subpoint">
+					In this case it was easy to know where to look with Reply-To: headers
+				</div>
+			</div>
+			<div class="step" data-x="59000" data-y="7950" data-scale="1">
+				<div class="subpoint">
+					Many times this information is really obvious in retrospect, but hard to find when processing large amounts of data
+				</div>
+			</div>
+			
+			<div class="step" data-x="61000" data-y="0" data-scale="2">
+			<div class="subsection-title">
+			  Targeted Threat Index
+			</div>
+			</div>
+
+			<div class="step" data-x="61300" data-y="-300" data-scale="1">
+			  A metric for assigning an overall threat ranking score to email messages that deliver malware
+			</div>
+
+			<div class="step" data-x="61600" data-y="-100">
+			  Measures both contextual and technical targeting complexity
+			</div>
+
+			<div class="step" data-x="61700" data-y="100">
+			  Measuring the sophistication of targeted attacks is complicated, due to contextual familiarity needed
+			</div>
+
+			<div class="step" data-x="61500" data-y="350">
+			  Intended for use in prioritizing analysis and understanding severity and danger of targeted threats
+			</div>
+
+			<div class="step" data-x="61500" data-y="1000">
+			  TTI METRIC
+			</div>
+
+			<div class="step" data-x="61500" data-y="1500">
+			  The TTI score is calculated in two parts:
+			</div>
+
+			<div class="step" data-x="61700" data-y="1650">
+			  <em>(Targeting Sophistication Base Value) * (Technical Sophistication Multiplier) = TTI Score</em>
+			</div>
+
+			<div class="step" data-x="61700" data-y="2400">
+			  Base value is 0 - 5
+			</div>
+
+			<div class="step" data-x="61750" data-y="2500">
+			  Technical multiplier is 1 - 2
+			</div>
+
+			<div class="step" data-x="61800" data-y="2600">
+			  Overall score is 0 - 10
+			</div>
+
+			<div class="step" data-x="61800" data-y="2750">
+			  0 is reserved for non-targeted threats, e.g. spam
+			</div>
+
+			<div class="step" data-x="61800" data-y="3500">
+			  TARGETING SOPHISTICATION
+			</div>
+
+			<div class="step" data-x="61800" data-y="4300">
+				<div class="tiny">
+			  <table>
+			  <tr>
+			    <td><strong>Value</strong></td>
+			    <td><strong>Description</strong></td>
+			  </tr>
+			  <tr>
+			    <td>0</td>
+			    <td>Not targeted (spam, financially motivated)</td>
+			  </tr>
+			  <tr>
+			    <td>1</td>
+			    <td>Targeted but not customized (looks fake)</td>
+			  </tr>
+			  <tr>
+			    <td>2</td>
+			    <td>Targeted and poorly customized (may look questionable)</td>
+			  </tr>
+			  <tr>
+			    <td>3</td>
+			    <td>Targeted and customized (may use a real person, organization, content)</td>
+			  </tr>
+			  <tr>
+			  <td>4</td>
+			  <td>Targeted and well-customized (likely directly addresses recipient or send from a compromised account, can be externally verified</td>
+			  </tr>
+			  <tr>
+			    <td>5</td>
+			    <td>Targeted and highly customized using sensitive data (likely from a separate compromise)</td>
+			  </tr>
+			  </table>
+			</div>
+			</div>
+
+			<div class="step" data-x="63500" data-y="4300">
+			  Higher scores rely on detailed knowledge of the recipient
+			</div>
+
+			<div class="step" data-x="63600" data-y="4450">
+			  Identity, interests, and trust networks
+			</div>
+
+			<div class="step" data-x="63600" data-y="4600">
+			  Very frequently use knowledge from a separate compromise
+			</div>
+
+			<div class="step" data-x="63600" data-y="4750">
+			  Content and presentation strongly matter
+			</div>
+
+			<div class="step" data-x="63500" data-y="4950">
+			  Sender identity (email address and name) also very important
+			</div>
+
+			<div class="step" data-x="63600" data-y="5125">
+			  Need contextual knowledge to assess this
+			</div>
+
+			<div class="step" data-x="63600" data-y="6200">
+			  TECHNICAL SOPHISTICATION
+			</div>
+			<div class="step" data-x="63600" data-y="8000">
+			<div class="tiny">
+			<table>
+			<tr>
+			  <td><strong>Value</strong></td>
+			  <td><strong>Description</strong></td>
+			</tr>
+			<tr>
+			  <td>1</td>
+			  <td>No code protection (packing, obfuscation, anti-reversing</td>
+			</tr>
+			<tr>
+			  <td>1.25</td>
+			  <td>Simple code protection (one method from above)</td>
+			</tr>
+			<tr>
+			  <td>1.5</td>
+			  <td>Multiple simple code protection techniques, or memory-only decryption</td>
+			</tr>
+			<tr>
+			  <td>1.75</td>
+			  <td>Simple code protection with at least one advanced protection method (rootkit, virtualized packer)</td>
+			</tr>
+			<tr>
+			  <td>2</td>
+			  <td>Multiple advanced protection techniques, appears designed by a professional software engineering team</td>
+			</tr>
+			</table>
+			</div>
+			</div>
+			<div class="step" data-x="65000" data-y="0">
+			  Almost all samples we've analyzed score 1.5 or less
+			</div>
+
+			<div class="step" data-x="65100" data-y="150">
+			  Notable exceptions: FinFisher, DaVinci RCS
+			</div>
+
+			<div class="step" data-x="65100" data-y="300">
+			  1.25 seems to be the sweet spot of least resistance
+			</div>
+
+			<div class="step" data-x="65000" data-y="450">
+			  No need to go overboard...
+			</div>
+			<div class="step hide" data-x="65500" data-y="650" data-scale="2">
+				thanks, AV industry!!!
+			</div>
+			<div class="step" data-x="64100" data-y="250" data-rotate="90">
+			  1.5 becoming more common as attack tools are developed
+			</div>
+
+			<div class="step" data-x="64000" data-y="400" data-rotate="90">
+			  PlugX, Surtr
+			</div>
+
+			<div id="recommendations" class="step" data-x="68150" data-y="0" data-scale="2">
+			  RECOMMENDATIONS
+			</div>
+			<div class="step" data-x="68950" data-y="0" data-scale="1">
+			  <img src="resources/img/MrGarrison.png"></img>
+			</div>
+
+			<div class="step" data-x="68150" data-y="200">
+			  Contextual and technical analysis for cluster identification
+			</div>
+
+			<div class="step" data-x="68150" data-y="350">
+			  Threat data collection system
+			</div>
+
+			<div class="step" data-x="68300" data-y="500">
+			  Need something beyond MD5s, domain names, and IPs
+			</div>
+
+			<div class="step" data-x="69200" data-y="500">
+			  TTI metric for ranking and prioritizing threats
+			</div>
+
+			<div class="step" data-x="69400" data-y="300">
+			  Monitoring threats under active development
+			</div>
+
+			<div class="step" data-x="69400" data-y="100">
+			  Knowing how to catch it now will help with catching it later
+			</div>
+
+			<div class="step" data-x="69400" data-y="-100">
+			  And it means the attackers are invested!
+			</div>
+
+			<div class="step" data-x="71400" data-y="0">
+			  ...AND SOME DONT'S
+			</div>
+
+			<div class="step" data-x="71400" data-y="1000">
+			  Cluster identification is <b>not</b> the same as actor attribution
+			</div>
+
+			<div class="step" data-x="71650" data-y="1150">
+			<div class="secret">
+			  State-sponsored, state-supported, state-suggested, state-overlooked?
+			</div>
+			</div>
+
+			<div class="step" data-x="71650" data-y="2000">
+			  "Offensive defense" and "strike back policy"
+			</div>
+
+			<div class="step" data-x="71800" data-y="2500">
+			  Are you <em>absolutely</em> sure you know who you're dealing with?
+			</div>
+
+			<div class="step" data-x="71900" data-y="2600">
+				<div class="secret">
+			  ...and even if you do, what then?
+				</div>
+			</div>
+
+			<div class="step long" data-x="73000" data-y="0">
+				<div class='centertext'>
+				<img src="resources/img/seven-ending-box.jpg"></img>
+			  	ALSO, STOP OPENING ATTACHMENTS
+				</div>
+			</div>
+
+			<div class="step" data-x="73000" data-y="1150">
+			  we all know what happens when you open the box
+			</div>
+
+			<div class="step hide" data-x="73000" data-y="1300">
+				<div class="secret">
+			  (it is not good)
+			</div>
+			</div>
+
+			<div class="step" data-x="76000" data-y="0">
+			  TARGETED THREATS REPORT
+			</div>
+
+			<div class="step" data-x="76000" data-y="1000">
+			  Citizen Lab will soon be releasing all of our findings, including those described here, in a full report: <em>Comparison of Targeted Threats Against Human Rights Organizations</em>
+			</div>
+
+			<div class="step" data-x="76000" data-y="2000">
+			  This will include technical details as well as contextual
+			</div>
+
+			<div class="step" data-x="76200" data-y="2150">
+			  MD5s, C2 IPs, domain names, malware families
+			</div>
+
+			<div class="step" data-x="76200" data-y="2350">
+			  Descriptions of spoofed individuals, organizations, and their trust relationships
+			</div>
+			
+			<div class="step" data-x="76000" data-y="3050">
+			  Check out citizenlab.org
+			</div>
+			<div class="step" data-x="76000" data-y="3150">
+			  or follow @citizenlab
+			</div>
+
+			<div class="step" data-x="77500" data-y="2350">
+				<div class="centertext">
+			  QUESTIONS?
+			<img src="resources/img/lasershark.png">
+			</div>
+			</div>
+
+			
+			
+		</div>
+		<script type="text/javascript" src="js/impress.js"></script>
+		<script>
+			impress().init();
+		</script>
+	</body>
+</html>
