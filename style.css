@@ -48,14 +48,13 @@ body {
     font-family: 'PT Sans', sans-serif;
     min-height: 740px;
 
-    color: #EEE;
+    color: #FFCCFF;
     
-    background: #333333;
-	background: -webkit-radial-gradient(center bottom, circle farthest-corner, #666666, #333333, black);
-    background: -moz-radial-gradient(center bottom, circle farthest-corner, #666666, #333333, black);
-    background: -o-radial-gradient(center bottom, circle farthest-corner, #666666, #333333, black);
-    background: -ms-radial-gradient(center bottom, circle farthest-corner, #666666, #333333, black);
-    backgrou
+    background: #000000;
+	background: -webkit-radial-gradient(center bottom, circle farthest-corner, #282828, #303030, black);
+    background: -moz-radial-gradient(center bottom, circle farthest-corner, #282828, #303030, black);
+    background: -o-radial-gradient(center bottom, circle farthest-corner, #282828, #303030, black);
+    background: -ms-radial-gradient(center bottom, circle farthest-corner, #282828, #303030, black);
 }
 
 /*
@@ -137,6 +136,10 @@ a:focus {
 	width:1100px;
 }
 
+.step.longest {
+	width:1300px;
+}
+
 
 
 /*
@@ -161,47 +164,6 @@ a:focus {
 .step:not(.active) { opacity: 0.3; }
 .step.hide:not(.active) { opacity: 0; }
 
-/*
-    These 'slide' step styles were heavily inspired by HTML5 Slides:
-    http://html5slides.googlecode.com/svn/trunk/styles.css
-
-    ;)
-
-    They cover everything what you see on first three steps of the demo.
-*/
-.slide {
-    display: block;
-
-    width: 900px;
-    height: 700px;
-    padding: 40px 60px;
-
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, .3);
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
-
-    color: rgb(102, 102, 102);
-    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
-
-    font-family: 'Open Sans', Arial, sans-serif;
-    font-size: 30px;
-    line-height: 36px;
-    letter-spacing: -1px;
-}
-
-.slide q {
-    display: block;
-    font-size: 50px;
-    line-height: 72px;
-
-    margin-top: 100px;
-}
-
-.slide q strong {
-    white-space: nowrap;
-}
-
 .righttext {
 	text-align: right;
 }
@@ -218,9 +180,20 @@ a:focus {
 	text-align: center;
 }
 
-td
+td.long
 {
-width:400px;
+	width:400px;
+}
+
+td.short
+{
+	width:100px;
+}
+
+.alert
+{
+	font-size: 70px;
+	color: #CC0066;
 }
 
 /*
@@ -263,6 +236,12 @@ width:400px;
 
 #title .footnote {
     font-size: 32px;
+}
+
+.tiny {
+	font-size: 30px;
+    width: 1000px;
+    text-align: left;
 }
 
 /*
